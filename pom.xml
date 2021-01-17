@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>me.myles</groupId>
+	<artifactId>Java-Discord-API</artifactId>
+	<version>1.0.0</version>
+	<name>Java-Discord-API</name>
+	<description>An easy to use Discord API that extends JDA!</description>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub mdeslippe Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/mdeslippe/Java-Discord-API</url>
+		</repository>
+	</distributionManagement>
+	<repositories>
+		<!-- JDA API Repository -->
+		<repository>
+			<id>jcenter</id>
+			<name>jcenter-bintray</name>
+			<url>https://jcenter.bintray.com</url>
+		</repository>
+		<!-- Github Repository -->
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<!-- JDA API -->
+		<dependency>
+			<groupId>net.dv8tion</groupId>
+			<artifactId>JDA</artifactId>
+			<version>4.2.0_222</version>
+		</dependency>
+		<!-- Yaml API -->
+		<dependency>
+			<groupId>me.carleslc.Simple-YAML</groupId>
+			<artifactId>Simple-Yaml</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.16</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>
