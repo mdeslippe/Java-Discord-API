@@ -13,7 +13,7 @@ This is a simple utility that allows you to easily create and manage discord bot
 ```xml
 <dependency>
 	<groupId>com.github.mdeslippe</groupId>
-	<artifactId>Java-Discord-API</artifactId>
+	<artifactId>java-discord-api</artifactId>
 	<version>{VERSION}</version>
 	<scope>provided</scope>
 </dependency>
