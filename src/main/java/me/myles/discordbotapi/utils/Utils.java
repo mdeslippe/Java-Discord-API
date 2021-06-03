@@ -75,7 +75,7 @@ public final class Utils {
 	 */
 	public static boolean memberContainsAtLeastOneRole(@Nonnull final Member member, @Nullable final Role[] roles) {
 		
-		if (roles == null)
+		if (roles == null || roles.length == 0)
 			return false;
 		
 		for (Role role : roles)

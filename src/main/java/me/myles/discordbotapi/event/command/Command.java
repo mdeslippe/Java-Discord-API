@@ -264,7 +264,7 @@ public abstract class Command {
 			
 		}
 
-		Member member = guild.getMember(executor);
+		Member member = guild.retrieveMember(executor).complete();
 		
 		// The quild will be null if the command was executed in a channel that is not a
 		// guild, for example a private messageing channel.

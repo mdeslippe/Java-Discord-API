@@ -123,13 +123,19 @@ public class Bot {
 	/**
 	 * Start the Bot.
 	 * 
+	 * <p>
+	 * <strong>Note:</strong> this will block the thread until the bot is connected.
+	 * </p>
+	 * 
 	 * @throws LoginException If there was an issue logging into the Bot.
+	 * @throws InterruptedException If the thread was inturrupted.
 	 */
-	public synchronized void start() throws LoginException {
+	public synchronized void start() throws LoginException, InterruptedException {
 
 		JDABuilder builder = JDABuilder.createDefault(token);
 		builder.addEventListeners(this.getInternalEventListener());
 		this.discordAPI = builder.build();
+		this.discordAPI.awaitReady();
 
 	}
 

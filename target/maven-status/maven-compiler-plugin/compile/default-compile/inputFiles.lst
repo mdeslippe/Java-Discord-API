@@ -10,4 +10,5 @@
 /home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/utils/Utils.java
 /home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/data/file/ConfigurationFile.java
 /home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/data/file/FileManager.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/event/EventPriority.java
 /home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/bot/Bot.java

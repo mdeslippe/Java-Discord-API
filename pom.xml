@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>me.myles</groupId>
 	<artifactId>java-discord-api</artifactId>
-	<version>1.1.0</version>
+	<version>1.1.1</version>
 	<name>java-discord-api</name>
 	<description>An easy to use Discord API that extends JDA!</description>
 	<!-- Distribution -->
