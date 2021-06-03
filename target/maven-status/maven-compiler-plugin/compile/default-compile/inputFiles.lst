@@ -1,13 +1,13 @@
-/home/myles/Work Space/Java/Discord Bot API/src/main/java/me/myles/discordbotapi/data/file/ConfigurationFile.java
-/home/myles/Work Space/Java/Discord Bot API/src/main/java/me/myles/discordbotapi/bot/InternalCommandListener.java
-/home/myles/Work Space/Java/Discord Bot API/src/main/java/me/myles/discordbotapi/event/Listener.java
-/home/myles/Work Space/Java/Discord Bot API/src/main/java/me/myles/discordbotapi/event/EventManager.java
-/home/myles/Work Space/Java/Discord Bot API/src/main/java/me/myles/discordbotapi/bot/Bot.java
-/home/myles/Work Space/Java/Discord Bot API/src/main/java/me/myles/discordbotapi/event/exception/InvalidEventHandlerException.java
-/home/myles/Work Space/Java/Discord Bot API/src/main/java/me/myles/discordbotapi/bot/InternalEventListener.java
-/home/myles/Work Space/Java/Discord Bot API/src/main/java/me/myles/discordbotapi/event/command/Command.java
-/home/myles/Work Space/Java/Discord Bot API/src/main/java/me/myles/discordbotapi/event/EventHandler.java
-/home/myles/Work Space/Java/Discord Bot API/src/main/java/me/myles/discordbotapi/event/command/CommandManager.java
-/home/myles/Work Space/Java/Discord Bot API/src/main/java/me/myles/discordbotapi/data/file/AbstractConfigurationFile.java
-/home/myles/Work Space/Java/Discord Bot API/src/main/java/me/myles/discordbotapi/utils/Utils.java
-/home/myles/Work Space/Java/Discord Bot API/src/main/java/me/myles/discordbotapi/data/file/FileManager.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/event/EventManager.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/event/EventHandler.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/event/command/CommandManager.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/bot/InternalCommandListener.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/data/file/AbstractConfigurationFile.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/bot/InternalEventListener.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/event/exception/InvalidEventHandlerException.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/event/command/Command.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/event/Listener.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/utils/Utils.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/data/file/ConfigurationFile.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/data/file/FileManager.java
+/home/myles/Work Space/Java/Java-Discord-API/src/main/java/me/myles/discordbotapi/bot/Bot.java

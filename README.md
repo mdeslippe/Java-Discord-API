@@ -63,7 +63,7 @@ public class MyCommand extends Command {
 
 	public MyCommand() {
 		super("command_name", Permission.command_permission, aliases);
-        this.addSubCommand(new MySubCommand());
+		this.addSubCommand(new MySubCommand());
 	}
 
 }
@@ -76,10 +76,10 @@ Creating an event listener is very similar to creating a command, just simply do
 ```java
 public class MyListener implements Listener {
 
-    // This method name can be anything.
+	// This method name can be anything.
 	@EventHandler
 	public void myListenerMethod(EventType event) {
-        // This will be ran when the event occurs.
+		// This will be ran when the event occurs.
 	}
 
 }
@@ -94,10 +94,10 @@ bot.getEventManager().registerEvent(new MyListener());
 
 ## Common Pitfalls
 ### Commands Not Working?
-You must ensure that the command is registered with the bot in order for it to work, you can see how to do so above in the "How to register a command" section.
+You must ensure that the command is registered with the bot in order for it to work, you can see how to do so above in the "How to Create a Command" section.
 
 ### Event Listeners Not Working?
-You must ensure that the event is registered with the bot in order for it to work, you can see how to do so above in the "How to register an event" section.
+You must ensure that the event is registered with the bot in order for it to work, you can see how to do so above in the "How to Create an Event Listener" section.
 
 ## Contributions
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

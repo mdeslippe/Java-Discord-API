@@ -111,8 +111,10 @@ public class EventManager {
 	 */
 	public void dispatchEvent(@Nonnull final GenericEvent event) {
 
-		for (Listener index : listeners)
-			this.executeEvent(index.getClass(), index, event);
+		for(EventPriority priority : EventPriority.getPrioritiesInOrder())		
+			for (Listener index : listeners)
+				this.executeEvent(index.getClass(), index, priority, event);
+			
 
 	}
 
@@ -121,9 +123,10 @@ public class EventManager {
 	 * 
 	 * @param clazz    The listener class.
 	 * @param executor The class executing the event.
+	 * @param priority The current priority to execute.
 	 * @param args     The event arguments.
 	 */
-	private void executeEvent(@Nonnull Class<?> clazz, @Nonnull Object executor, @Nonnull final Object... args) {
+	private void executeEvent(@Nonnull Class<?> clazz, @Nonnull Object executor, @Nonnull EventPriority priority, @Nonnull final Object... args) {
 
 		for (Method index : clazz.getDeclaredMethods()) {
 
@@ -140,8 +143,9 @@ public class EventManager {
 				if (paramaterType.equals(argumentType) || paramaterType.equals(genericType)) {
 
 					try {
-
-						index.invoke(executor, args);
+						
+						if(index.getDeclaredAnnotation(EventHandler.class).priority() == priority)
+							index.invoke(executor, args);
 
 					} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 

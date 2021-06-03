@@ -41,4 +41,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface EventHandler {
 
+	/**
+	 * Get the priority of the event handler.
+	 * 
+	 * @return The priority of the event handler.
+	 */
+	public EventPriority priority() default EventPriority.NORMAL;
+
 }

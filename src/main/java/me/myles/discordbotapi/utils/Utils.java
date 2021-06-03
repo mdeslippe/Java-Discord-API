@@ -18,6 +18,12 @@
  */
 package me.myles.discordbotapi.utils;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.Role;
+
 /**
  * A general utilities class.
  * 
@@ -54,6 +60,28 @@ public final class Utils {
 
 		// Since the loop fell through, that implies the value was not found, thus
 		// return false.
+		return false;
+
+	}
+
+	/**
+	 * Check if a {@link net.dv8tion.jda.api.entities.Member Member} contains at
+	 * least one of the roles supplied.
+	 * 
+	 * @param member The member to check.
+	 * @param roles  The roles to check for.
+	 * @return The truth value associated with the member containing at least one of
+	 *         the roles in the list.
+	 */
+	public static boolean memberContainsAtLeastOneRole(@Nonnull final Member member, @Nullable final Role[] roles) {
+		
+		if (roles == null)
+			return false;
+		
+		for (Role role : roles)
+			if (member.getRoles().contains(role))
+				return true;
+
 		return false;
 
 	}

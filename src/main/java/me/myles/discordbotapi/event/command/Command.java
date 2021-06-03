@@ -27,7 +27,9 @@ import me.myles.discordbotapi.utils.Utils;
 
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.MessageChannel;
+import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.User;
 
 /**
@@ -53,7 +55,13 @@ public abstract class Command {
 	 */
 	@Getter
 	private final Permission permission;
-
+	
+	/**
+	 * Roles that bypass the command's permission.
+	 */
+	@Getter
+	private final Role[] roles;
+	
 	/**
 	 * The command's aliases.
 	 */
@@ -74,6 +82,7 @@ public abstract class Command {
 
 		this.name = name;
 		this.permission = Permission.MESSAGE_WRITE;
+		this.roles = null;
 		this.aliases = null;
 		this.subCommands = new ArrayList<Command>();
 
@@ -89,6 +98,7 @@ public abstract class Command {
 
 		this.name = name;
 		this.permission = permission;
+		this.roles = null;
 		this.aliases = null;
 		this.subCommands = new ArrayList<Command>();
 
@@ -104,6 +114,7 @@ public abstract class Command {
 
 		this.name = name;
 		this.permission = Permission.MESSAGE_WRITE;
+		this.roles = null;
 		this.aliases = aliases;
 		this.subCommands = new ArrayList<Command>();
 
@@ -120,11 +131,48 @@ public abstract class Command {
 
 		this.name = name;
 		this.permission = permission;
+		this.roles = null;
 		this.aliases = aliases;
 		this.subCommands = new ArrayList<Command>();
 
 	}
+	
+	/**
+	 * Create a new command.
+	 * 
+	 * @param name    The name of the command.
+	 * @param roles   Role(s) required to execute the command.
+	 * @param aliases The command's aliases.
+	 */
+	public Command(String name, Role[] roles, String[] aliases) {
 
+		this.name = name;
+		this.permission = Permission.ADMINISTRATOR;
+		this.roles = roles;
+		this.aliases = aliases;
+		this.subCommands = new ArrayList<Command>();
+
+	}
+	
+	/**
+	 * Create a new command.
+	 * 
+	 * @param name       The name of the command.
+	 * @param permission The permission required to use the command.
+	 * @param roles      Roles that bypass the permission.
+	 * @param aliases    The command's aliases.
+	 */
+	public Command(String name, Permission permission, Role[] roles, String[] aliases) {
+
+		this.name = name;
+		this.permission = permission;
+		this.roles = roles;
+		this.aliases = aliases;
+		this.subCommands = new ArrayList<Command>();
+
+	}
+	
+	
 	/**
 	 * Add a sub-command.
 	 * 
@@ -216,9 +264,11 @@ public abstract class Command {
 			
 		}
 
+		Member member = guild.getMember(executor);
+		
 		// The quild will be null if the command was executed in a channel that is not a
 		// guild, for example a private messageing channel.
-		if (guild == null || guild.getMember(executor).hasPermission(this.getPermission()))
+		if (guild == null || member.hasPermission(this.getPermission()) || Utils.memberContainsAtLeastOneRole(member, this.getRoles()))
 			this.onCommand(guild, channel, executor, label, args);
 		else
 			this.onPermissionDenied(guild, channel, executor, label, args);
